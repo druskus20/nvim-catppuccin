@@ -16,12 +16,13 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		-- Most semantic tokens (@lsp.type.<...>) are no longer defined in this file, as Neovim links to already themed Tree-sitter captures by default.
 
 		-- lsp's are able to detect enum members where treesitter often cannot
-		["@lsp.type.enumMember"] = { fg = C.teal },
+		--["@lsp.type.enumMember"] = { fg = C.teal },
 		-- we assume treesitter can already handle this
 		-- - treesitter can detect variables in buffers
 		-- - lsp does not need responsibility for this, in fact it can be less
 		--   accurate in cases
 		["@lsp.type.variable"] = {},
+		["@lsp.type.unresolvedReference"] = { link = "DiagnosticUnderlineError" },
 
 		-- in cases where the lsp can be more specific than treesitter, we should
 		-- allow lsp to override treesitter

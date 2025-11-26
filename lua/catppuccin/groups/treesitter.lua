@@ -207,72 +207,72 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 	}
 
 	-- Legacy highlights
-	colors["@parameter"] = colors["@variable.parameter"]
-	colors["@field"] = colors["@variable.member"]
-	colors["@namespace"] = colors["@module"]
-	colors["@float"] = colors["@number.float"]
-	colors["@symbol"] = colors["@string.special.symbol"]
-	colors["@string.regex"] = colors["@string.regexp"]
+	--colors["@parameter"] = colors["@variable.parameter"]
+	--colors["@field"] = colors["@variable.member"]
+	--colors["@namespace"] = colors["@module"]
+	--colors["@float"] = colors["@number.float"]
+	--colors["@symbol"] = colors["@string.special.symbol"]
+	--colors["@string.regex"] = colors["@string.regexp"]
 
-	colors["@text"] = colors["@markup"]
-	colors["@text.strong"] = colors["@markup.strong"]
-	colors["@text.emphasis"] = colors["@markup.italic"]
-	colors["@text.underline"] = colors["@markup.underline"]
-	colors["@text.strike"] = colors["@markup.strikethrough"]
-	colors["@text.uri"] = colors["@markup.link.url"]
-	colors["@text.math"] = colors["@markup.math"]
-	colors["@text.environment"] = colors["@markup.environment"]
-	colors["@text.environment.name"] = colors["@markup.environment.name"]
+	--colors["@text"] = colors["@markup"]
+	--colors["@text.strong"] = colors["@markup.strong"]
+	--colors["@text.emphasis"] = colors["@markup.italic"]
+	--colors["@text.underline"] = colors["@markup.underline"]
+	--colors["@text.strike"] = colors["@markup.strikethrough"]
+	--colors["@text.uri"] = colors["@markup.link.url"]
+	--colors["@text.math"] = colors["@markup.math"]
+	--colors["@text.environment"] = colors["@markup.environment"]
+	--colors["@text.environment.name"] = colors["@markup.environment.name"]
 
-	colors["@text.title"] = colors["@markup.heading"]
-	colors["@text.literal"] = colors["@markup.raw"]
-	colors["@text.reference"] = colors["@markup.link"]
+	--colors["@text.title"] = colors["@markup.heading"]
+	--colors["@text.literal"] = colors["@markup.raw"]
+	--colors["@text.reference"] = colors["@markup.link"]
 
-	colors["@text.todo.checked"] = colors["@markup.list.checked"]
-	colors["@text.todo.unchecked"] = colors["@markup.list.unchecked"]
+	--colors["@text.todo.checked"] = colors["@markup.list.checked"]
+	--colors["@text.todo.unchecked"] = colors["@markup.list.unchecked"]
 
-	colors["@comment.note"] = colors["@comment.hint"]
+	--colors["@comment.note"] = colors["@comment.hint"]
 
-	-- @text.todo is now for todo comments, not todo notes like in markdown
-	colors["@text.todo"] = colors["@comment.todo"]
-	colors["@text.warning"] = colors["@comment.warning"]
-	colors["@text.note"] = colors["@comment.note"]
-	colors["@text.danger"] = colors["@comment.error"]
+	---- @text.todo is now for todo comments, not todo notes like in markdown
+	--colors["@text.todo"] = colors["@comment.todo"]
+	--colors["@text.warning"] = colors["@comment.warning"]
+	--colors["@text.note"] = colors["@comment.note"]
+	--colors["@text.danger"] = colors["@comment.error"]
 
-	-- @text.uri is now
-	-- > @markup.link.url in markup links
-	-- > @string.special.url outside of markup
-	colors["@text.uri"] = colors["@markup.link.uri"]
+	---- @text.uri is now
+	---- > @markup.link.url in markup links
+	---- > @string.special.url outside of markup
+	--colors["@text.uri"] = colors["@markup.link.uri"]
 
-	colors["@method"] = colors["@function.method"]
-	colors["@method.call"] = colors["@function.method.call"]
+	--colors["@method"] = colors["@function.method"]
+	--colors["@method.call"] = colors["@function.method.call"]
 
-	colors["@text.diff.add"] = colors["@diff.plus"]
-	colors["@text.diff.delete"] = colors["@diff.minus"]
+	--colors["@text.diff.add"] = colors["@diff.plus"]
+	--colors["@text.diff.delete"] = colors["@diff.minus"]
 
-	colors["@type.qualifier"] = colors["@keyword.modifier"]
-	colors["@keyword.storage"] = colors["@keyword.modifier"]
-	colors["@define"] = colors["@keyword.directive.define"]
-	colors["@preproc"] = colors["@keyword.directive"]
-	colors["@storageclass"] = colors["@keyword.storage"]
-	colors["@conditional"] = colors["@keyword.conditional"]
-	colors["@exception"] = colors["@keyword.exception"]
-	colors["@include"] = colors["@keyword.import"]
-	colors["@repeat"] = colors["@keyword.repeat"]
+	--colors["@type.qualifier"] = colors["@keyword.modifier"]
+	--colors["@keyword.storage"] = colors["@keyword.modifier"]
+	--colors["@define"] = colors["@keyword.directive.define"]
+	--colors["@preproc"] = colors["@keyword.directive"]
+	--colors["@storageclass"] = colors["@keyword.storage"]
+	--colors["@conditional"] = colors["@keyword.conditional"]
+	--colors["@exception"] = colors["@keyword.exception"]
+	--colors["@include"] = colors["@keyword.import"]
+	--colors["@repeat"] = colors["@keyword.repeat"]
 
-	colors["@symbol.ruby"] = colors["@string.special.symbol.ruby"]
+	--colors["@symbol.ruby"] = colors["@string.special.symbol.ruby"]
 
-	colors["@variable.member.yaml"] = colors["@field.yaml"]
+	--colors["@variable.member.yaml"] = colors["@field.yaml"]
 
-	colors["@text.title.1.markdown"] = colors["@markup.heading.1.markdown"]
-	colors["@text.title.2.markdown"] = colors["@markup.heading.2.markdown"]
-	colors["@text.title.3.markdown"] = colors["@markup.heading.3.markdown"]
-	colors["@text.title.4.markdown"] = colors["@markup.heading.4.markdown"]
-	colors["@text.title.5.markdown"] = colors["@markup.heading.5.markdown"]
-	colors["@text.title.6.markdown"] = colors["@markup.heading.6.markdown"]
+	--colors["@text.title.1.markdown"] = colors["@markup.heading.1.markdown"]
+	--colors["@text.title.2.markdown"] = colors["@markup.heading.2.markdown"]
+	--colors["@text.title.3.markdown"] = colors["@markup.heading.3.markdown"]
+	--colors["@text.title.4.markdown"] = colors["@markup.heading.4.markdown"]
+	--colors["@text.title.5.markdown"] = colors["@markup.heading.5.markdown"]
+	--colors["@text.title.6.markdown"] = colors["@markup.heading.6.markdown"]
 
-	colors["@method.php"] = colors["@function.method.php"]
-	colors["@method.call.php"] = colors["@function.method.call.php"]
+	--colors["@method.php"] = colors["@function.method.php"]
+	--colors["@method.call.php"] = colors["@function.method.call.php"]
 
 	return colors
 end

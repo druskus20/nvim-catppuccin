@@ -1,13 +1,14 @@
 local M = {}
 
 function M.get_palette(flavour)
-	local flvr = flavour or require("catppuccin").flavour or vim.g.catppuccin_flavour or "mocha"
+	print(flavour)
+	local flvr = flavour or require("catppuccin").flavour or vim.g.catppuccin_flavour or "latte"
 	local _, palette = pcall(require, "catppuccin.palettes." .. flvr)
 	local O = require("catppuccin").options
 	local ans = vim.tbl_deep_extend("keep", O.color_overrides.all or {}, O.color_overrides[flvr] or {}, palette or {})
 
-	--[[ 
-		Kitty makes Neovim transparent if its own terminal background matches Neovim, 
+	--[[
+		Kitty makes Neovim transparent if its own terminal background matches Neovim,
 		so we need to adjust the color channels to make sure people don't suddenly
 		have a transparent background if they haven't specified it.
 

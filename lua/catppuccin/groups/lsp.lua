@@ -45,36 +45,46 @@ function M.get()
 			bg = O.transparent_background and C.none or U.darken(hint, darkening_percentage, C.base),
 			fg = ok,
 			style = virtual_text.ok,
-		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		},                                                                           -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
-		DiagnosticError = { bg = C.none, fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { bg = C.none, fg = error, style = virtual_text.errors },  -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn = { bg = C.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticInfo = { bg = C.none, fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { bg = C.none, fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticOk = { bg = C.none, fg = ok, style = virtual_text.ok }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { bg = C.none, fg = hint, style = virtual_text.hints },     -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticOk = { bg = C.none, fg = ok, style = virtual_text.ok },            -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
-		DiagnosticUnderlineError = { style = underlines.errors, sp = error }, -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn = { style = underlines.warnings, sp = warning }, -- Used to underline "Warn" diagnostics
+		DiagnosticUnderlineError = {
+			bg = U.darken(error, darkening_percentage, C.base),
+			fg = error,
+			style = underlines.errors,
+			sp = error
+		}, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn = {
+			bg = U.darken(warning, darkening_percentage, C.base),
+			fg = warning,
+			style = underlines.warnings,
+			sp = warning
+		},                                                                     -- Used to underline "Warn" diagnostics
 		DiagnosticUnderlineInfo = { style = underlines.information, sp = info }, -- Used to underline "Info" diagnostics
-		DiagnosticUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
-		DiagnosticUnderlineOk = { style = underlines.ok, sp = ok }, -- Used to underline "Ok" diagnostics
+		DiagnosticUnderlineHint = { style = underlines.hints, sp = hint },     -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineOk = { style = underlines.ok, sp = ok },            -- Used to underline "Ok" diagnostics
 
-		DiagnosticFloatingError = { fg = error }, -- Used to color "Error" diagnostic messages in diagnostics float
-		DiagnosticFloatingWarn = { fg = warning }, -- Used to color "Warn" diagnostic messages in diagnostics float
-		DiagnosticFloatingInfo = { fg = info }, -- Used to color "Info" diagnostic messages in diagnostics float
-		DiagnosticFloatingHint = { fg = hint }, -- Used to color "Hint" diagnostic messages in diagnostics float
-		DiagnosticFloatingOk = { fg = ok }, -- Used to color "Ok" diagnostic messages in diagnostics float
+		DiagnosticFloatingError = { fg = error },                              -- Used to color "Error" diagnostic messages in diagnostics float
+		DiagnosticFloatingWarn = { fg = warning },                             -- Used to color "Warn" diagnostic messages in diagnostics float
+		DiagnosticFloatingInfo = { fg = info },                                -- Used to color "Info" diagnostic messages in diagnostics float
+		DiagnosticFloatingHint = { fg = hint },                                -- Used to color "Hint" diagnostic messages in diagnostics float
+		DiagnosticFloatingOk = { fg = ok },                                    -- Used to color "Ok" diagnostic messages in diagnostics float
 
-		DiagnosticSignError = { fg = error }, -- Used for "Error" signs in sign column
-		DiagnosticSignWarn = { fg = warning }, -- Used for "Warn" signs in sign column
-		DiagnosticSignInfo = { fg = info }, -- Used for "Info" signs in sign column
-		DiagnosticSignHint = { fg = hint }, -- Used for "Hint" signs in sign column
-		DiagnosticSignOk = { fg = ok }, -- Used for "Ok" signs in sign column
+		DiagnosticSignError = { fg = error },                                  -- Used for "Error" signs in sign column
+		DiagnosticSignWarn = { fg = warning },                                 -- Used for "Warn" signs in sign column
+		DiagnosticSignInfo = { fg = info },                                    -- Used for "Info" signs in sign column
+		DiagnosticSignHint = { fg = hint },                                    -- Used for "Hint" signs in sign column
+		DiagnosticSignOk = { fg = ok },                                        -- Used for "Ok" signs in sign column
 
-		LspDiagnosticsDefaultError = { fg = error }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspDiagnosticsDefaultInformation = { fg = info }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspDiagnosticsDefaultHint = { fg = hint }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultError = { fg = error },                           -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultWarning = { fg = warning },                       -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultInformation = { fg = info },                      -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultHint = { fg = hint },                             -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspSignatureActiveParameter = { bg = C.surface0, style = { "bold" } },
 		-- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
 		-- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
@@ -85,23 +95,23 @@ function M.get()
 		LspDiagnosticsWarning = { fg = warning },
 		LspDiagnosticsInformation = { fg = info },
 		LspDiagnosticsHint = { fg = hint },
-		LspDiagnosticsVirtualTextError = { fg = error, style = virtual_text.errors }, -- Used for "Error" diagnostic virtual text
+		LspDiagnosticsVirtualTextError = { fg = error, style = virtual_text.errors },      -- Used for "Error" diagnostic virtual text
 		LspDiagnosticsVirtualTextWarning = { fg = warning, style = virtual_text.warnings }, -- Used for "Warning" diagnostic virtual text
 		LspDiagnosticsVirtualTextInformation = { fg = info, style = virtual_text.warnings }, -- Used for "Information" diagnostic virtual text
-		LspDiagnosticsVirtualTextHint = { fg = hint, style = virtual_text.hints }, -- Used for "Hint" diagnostic virtual text
-		LspDiagnosticsUnderlineError = { style = underlines.errors, sp = error }, -- Used to underline "Error" diagnostics
-		LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = warning }, -- Used to underline "Warning" diagnostics
+		LspDiagnosticsVirtualTextHint = { fg = hint, style = virtual_text.hints },         -- Used for "Hint" diagnostic virtual text
+		LspDiagnosticsUnderlineError = { style = underlines.errors, sp = error },          -- Used to underline "Error" diagnostics
+		LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = warning },    -- Used to underline "Warning" diagnostics
 		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = info }, -- Used to underline "Information" diagnostics
-		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
-		LspCodeLens = { fg = C.overlay0 }, -- virtual text of the codelens
-		LspCodeLensSeparator = { link = "LspCodeLens" }, -- virtual text of the codelens separators
+		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint },             -- Used to underline "Hint" diagnostics
+		LspCodeLens = { fg = C.overlay0 },                                                 -- virtual text of the codelens
+		LspCodeLensSeparator = { link = "LspCodeLens" },                                   -- virtual text of the codelens separators
 		LspInlayHint = {
 			-- fg of `Comment`
 			fg = C.overlay0,
 			-- bg of `CursorLine`
 			bg = (O.transparent_background or not inlay_hints.background) and C.none
-				or U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
-		}, -- virtual text of the inlay hints
+					or U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
+		},                                      -- virtual text of the inlay hints
 		LspInfoBorder = { link = "FloatBorder" }, -- LspInfo border
 	}
 end

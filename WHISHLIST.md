@@ -1,0 +1,1 @@
+- errors / misspellings should still stand out (background color?)
